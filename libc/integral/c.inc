@@ -203,12 +203,7 @@ typedef uint64_t uintmax_t;
 #endif
 
 #ifndef privileged
-#if !defined(__STRICT_ANSI__) && \
-    (__has_attribute(__visibility__) || defined(__GNUC__))
 #define privileged _Section(".privileged") noinstrument
-#else
-#define privileged _Section(".privileged") noinstrument
-#endif
 #endif
 
 #ifndef noinstrument
