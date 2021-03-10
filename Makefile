@@ -61,7 +61,9 @@
 
 SHELL         = /bin/sh
 HOSTS        ?= freebsd openbsd netbsd rhel7 rhel5 xnu win7 win10
+ifneq ($(MODE), cross9)
 SANITY       := $(shell build/sanitycheck $$PPID)
+endif
 GNUMAKEFLAGS += --output-sync
 
 .SUFFIXES:

@@ -72,6 +72,21 @@ OBJCOPY = o/third_party/gcc/bin/x86_64-linux-musl-objcopy
 OBJDUMP = o/third_party/gcc/bin/x86_64-linux-musl-objdump
 ADDR2LINE = o/third_party/gcc/bin/x86_64-linux-musl-addr2line
 
+# cross9 Mode
+ifeq ($(MODE), cross9)
+AS = cross9/bin/x86_64-pc-linux-gnu-as.exe
+CC = cross9/bin/x86_64-pc-linux-gnu-gcc.exe
+CXX = cross9/bin/x86_64-pc-linux-gnu-g++.exe
+CXXFILT = cross9/bin/x86_64-pc-linux-gnu-c++filt.exe
+LD = cross9/bin/x86_64-pc-linux-gnu-ld.bfd.exe
+NM = cross9/bin/x86_64-pc-linux-gnu-nm.exe
+GCC = cross9/bin/x86_64-pc-linux-gnu-gcc.exe
+STRIP = cross9/bin/x86_64-pc-linux-gnu-strip.exe
+OBJCOPY = cross9/bin/x86_64-pc-linux-gnu-objcopy.exe
+OBJDUMP = cross9/bin/x86_64-pc-linux-gnu-objdump.exe
+ADDR2LINE = cross9/bin/x86_64-pc-linux-gcc-addr2line.exe
+endif
+
 COMMA := ,
 PWD := $(shell pwd)
 IMAGE_BASE_VIRTUAL ?= 0x400000
