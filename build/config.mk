@@ -241,21 +241,10 @@ TARGET_ARCH ?=			\
 	-msse3
 endif
 
-# LLVM Mode
+# LLVM Mode (see also definitions.mk)
 ifeq ($(MODE), llvm)
 TARGET_ARCH ?= -msse3
 CONFIG_CCFLAGS += $(BACKTRACES) $(FTRACE) -O2
-AS = clang
-CC = clang
-CXX = clang++
-CXXFILT = llvm-c++filt
-LD = ld.lld
-NM = llvm-nm
-GCC = clang
-STRIP = llvm-strip
-OBJCOPY = llvm-objcopy
-OBJDUMP = llvm-objdump
-ADDR2LINE = llvm-addr2line
 endif
 
 # ANSI Mode

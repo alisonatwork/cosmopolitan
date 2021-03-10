@@ -87,6 +87,20 @@ OBJDUMP = cross9/bin/x86_64-pc-linux-gnu-objdump.exe
 ADDR2LINE = cross9/bin/x86_64-pc-linux-gcc-addr2line.exe
 endif
 
+ifeq ($(MODE), llvm)
+AS = clang
+CC = clang
+CXX = clang++
+CXXFILT = llvm-c++filt
+LD = ld.lld
+NM = llvm-nm
+GCC = clang
+STRIP = llvm-strip
+OBJCOPY = llvm-objcopy
+OBJDUMP = llvm-objdump
+ADDR2LINE = llvm-addr2line
+endif
+
 COMMA := ,
 PWD := $(shell pwd)
 IMAGE_BASE_VIRTUAL ?= 0x400000
