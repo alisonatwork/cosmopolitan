@@ -243,7 +243,7 @@ endif
 
 # LLVM Mode (see also definitions.mk)
 ifeq ($(MODE), llvm)
-TARGET_ARCH ?= -msse3
+TARGET_ARCH ?= -target x86_64-pc-linux-gnu -msse3
 CONFIG_CCFLAGS += $(BACKTRACES) $(FTRACE) -O2
 endif
 
