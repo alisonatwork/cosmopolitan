@@ -102,7 +102,7 @@ ADDR2LINE = llvm-addr2line
 endif
 
 COMMA := ,
-PWD := $(shell pwd)
+PWD := $(shell build/bootstrap/pwd.com)
 IMAGE_BASE_VIRTUAL ?= 0x400000
 HELLO := $(shell build/hello)
 TMPDIR := $(shell build/findtmp)
